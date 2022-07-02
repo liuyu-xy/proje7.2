@@ -7,6 +7,7 @@ public class window {
         //设置窗口的宽高
         jf.setSize(500,400);
         //设置窗口的弹出位置，以像素为单位
+
 //        jf.setLocation(450,210);
         //屏幕中间位置弹出
         jf.setLocationRelativeTo(null);
