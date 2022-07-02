@@ -12,10 +12,15 @@ public class window {
         jf.setLocationRelativeTo(null);
         //设置窗口标题
         jf.setTitle("随机点名器");
-        JButton jb=new JButton("点击一下");
-        jf.add(jb);
+        //显示器
+            jf.setBounds(100,30,400,200);
         //是否显示窗口
         jf.setVisible(true);
+        //设置按钮
+        JButton jb=new JButton("点击一下");
+        jb.setBounds(185,293,95,38);
+        jf.add(jb);
+
         //点击x关闭窗口
         jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
     }
