@@ -15,7 +15,6 @@ public class window {
         JButton jb=new JButton("点击一下");
         jb.setSize(10,20);
         jf.add(jb);
-
         //是否显示窗口
         jf.setVisible(true);
         //点击x关闭窗口
