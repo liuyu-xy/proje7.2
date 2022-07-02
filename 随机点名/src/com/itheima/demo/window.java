@@ -13,7 +13,6 @@ public class window {
         //设置窗口标题
         jf.setTitle("随机点名器");
         JButton jb=new JButton("点击一下");
-
         jf.add(jb);
         //是否显示窗口
         jf.setVisible(true);
