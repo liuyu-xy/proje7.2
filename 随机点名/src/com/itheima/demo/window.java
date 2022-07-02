@@ -3,7 +3,7 @@ import javax.swing.*;
 public class window {
     public static void main(String[] args) {
         //导入窗口包
-        JFrame jf=new JFrame();
+            JFrame jf=new JFrame();
         //设置窗口的宽高
         jf.setSize(500,400);
         //设置窗口的弹出位置，以像素为单位
@@ -13,7 +13,7 @@ public class window {
         //设置窗口标题
         jf.setTitle("随机点名器");
         JButton jb=new JButton("点击一下");
-        jb.setSize(10,20);
+
         jf.add(jb);
         //是否显示窗口
         jf.setVisible(true);
