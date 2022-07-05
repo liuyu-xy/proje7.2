@@ -1,8 +1,9 @@
-package com.itheima.dmq;
-import java.io.IOException;
-public class demo {
-    public static void main(String[] args) throws IOException {
-        myJFrame mf=new myJFrame();
-    }
+package com.itheima.demo;
 
+import java.io.IOException;
+
+public class randemo {
+    public static void main(String[] args) throws IOException {
+        Randemoname rd=new Randemoname();
+    }
 }

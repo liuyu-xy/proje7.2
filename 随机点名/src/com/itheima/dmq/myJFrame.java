@@ -1,38 +1,43 @@
 package com.itheima.dmq;
-import com.itheima.demo.jframe;
-import javax.swing.*;
-import java.awt.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Random;
 public class myJFrame extends JFrame {
     private JPanel center;
     AbstractList<JButton> AL = new ArrayList<>();
-
-    public myJFrame() {
+    public myJFrame(){
         init();
     }
-
     private void init() {
         this.setSize(600, 400);//窗口的大小
         this.setTitle("随机点名");//窗口的标题
         this.setResizable(false); //固定大小不变动
         this.setLocationRelativeTo(null);//设置窗口位置在屏幕中心
-        this.setLayout(new BorderLayout());
-        center = new JPanel();
-        this.add(center, BorderLayout.CENTER);
-        center.setLayout(new FlowLayout(FlowLayout.LEFT));
-
-        for (int i = 0; i < 54; i++) {
-            JButton jb = new JButton("张三");
+        this.setLayout(new BorderLayout());//设置布局方式 为边框布局
+        center = new JPanel(); // 创建一个容器
+        /*InputStreamReader reader = new InputStreamReader(myJFrame.class.getClassLoader().getResourceAsStream("names.txt"));
+        BufferedReader br=new BufferedReader(reader);
+        String name;
+        while ((name= br.readLine())!=null){
+            JButton jb = new JButton(name);
             jb.setBackground(Color.lightGray);
-            AL.add(jb);
             center.add(jb);
+        }
+        br.close();*/
+        this.add(center, BorderLayout.CENTER); // 在窗口里添加进入容器并设置布局是边框布局且居中
+        center.setLayout(new FlowLayout(FlowLayout.LEFT));//设置容器的内部布局是流式布局，居左
+        for (int i = 0; i < 54; i++) { //使用for循环 创造54个张三按钮并添加到集合里且添加到中间容器内
+            JButton jb = new JButton("张三");
+            jb.setBackground(Color.lightGray);//设置每个按钮的背景颜色
+            AL.add(jb);  // 添加到集合
+            center.add(jb); //添加到居中容器内
         }
 
 /*
@@ -98,13 +103,12 @@ public class myJFrame extends JFrame {
             center.add(jb13);
             center.add(jb14);
             center.add(jb15);*/
-        center ct = new center();
         // 下南 流
-        JPanel left = new JPanel();
-        left.setLayout(new FlowLayout(FlowLayout.CENTER));
-        JButton jbsout = new JButton("点名");
-        left.add(jbsout);
-        this.add(left, BorderLayout.SOUTH);
+        JPanel foot = new JPanel(); //创建底部的容器
+        foot.setLayout(new FlowLayout(FlowLayout.CENTER));//设置底容器内的布局为流式布局居中
+        JButton jbsout = new JButton("点名");//创建点名按钮
+        foot.add(jbsout);//将按钮添加到底部容器内
+        this.add(foot, BorderLayout.SOUTH); //将底部容器添加到窗口内，使用边框布局，且在南边
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//点击x关闭窗口
         this.setVisible(true);//设置是否显示窗口
         Random RD = new Random();
@@ -113,7 +117,6 @@ public class myJFrame extends JFrame {
                     private Component comp = null;
                     private Thread d;
                     Random random = new Random();
-
                     @Override
                     public void mouseClicked(MouseEvent e) {
                         if (jbsout.getText().equals("点名")) {
@@ -122,23 +125,22 @@ public class myJFrame extends JFrame {
                             for (int i = 0; i < names.length; i++) {
                                 names[i].setBackground(Color.lightGray);
                             }
-
-                            d = new Thread(() -> {
-                                while (true) {
+                            d = new Thread(() -> { //多线程
+                                while (true) {//死循环
                                     int index = random.nextInt(names.length);
                                     names[index].setBackground(Color.blue);
                                     try {
-                                        d.sleep(100);
+                                        d.sleep(100); //让线性等待/睡眠一会 睡眠100毫秒
                                     } catch (InterruptedException interruptedException) {
                                         interruptedException.printStackTrace();
                                     }
                                     names[index].setBackground(Color.lightGray);
                                 }
                             });
-                            d.start();
+                            d.start();//多线程调用start
                         } else {
                             jbsout.setText("点名");
-                            d.stop();
+                            d.stop();//线程结束
                         }
 
                     /*if (comp!=null) {
