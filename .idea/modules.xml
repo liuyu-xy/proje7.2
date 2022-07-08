@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/猜数字/猜数字.iml" filepath="$PROJECT_DIR$/猜数字/猜数字.iml" />
+      <module fileurl="file://$PROJECT_DIR$/登录注册/登录注册.iml" filepath="$PROJECT_DIR$/登录注册/登录注册.iml" />
       <module fileurl="file://$PROJECT_DIR$/课堂资料/课堂资料.iml" filepath="$PROJECT_DIR$/课堂资料/课堂资料.iml" />
+      <module fileurl="file://$PROJECT_DIR$/贪吃蛇/贪吃蛇.iml" filepath="$PROJECT_DIR$/贪吃蛇/贪吃蛇.iml" />
       <module fileurl="file://$PROJECT_DIR$/随机点名/随机点名.iml" filepath="$PROJECT_DIR$/随机点名/随机点名.iml" />
     </modules>
   </component>

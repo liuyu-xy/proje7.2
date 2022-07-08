@@ -1,0 +1,3 @@
+ArryList 集合---底层数组结构
+LinkedList集合----底层链表结构
+arrylist的方法linkedlist集合也具备并且还具备额外的头尾相关的方法

@@ -50,7 +50,7 @@ public class alcsz extends JFrame {
     private void inittext() {
         text.setSize(330, 50);
         text.setLocation(160, 200);
-        System.out.println(i);
+        System.out.println("生成的随机数为:"+i);
         text.addActionListener(e -> putin.doClick());//回车提交
         putin.addActionListener(new ActionListener() {
             @Override
@@ -102,7 +102,7 @@ public class alcsz extends JFrame {
         putin.setLocation(260,260);
         putin.addActionListener(e -> {
             String st=text.getText();
-            System.out.println(st);
+            System.out.println("您输入的数字为:"+st);
 
         });
         this.add(putin);
@@ -113,10 +113,14 @@ public class alcsz extends JFrame {
         restart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                text.setText("");
                 hint.setText("猜数字游戏开始喽~");
                 i= r.nextInt(100)+1;
+                System.out.println("生成的随机数为:"+i);
                 min=1;
                 max=100;
+
+
             }
         });
         this.add(restart);
@@ -124,7 +128,8 @@ public class alcsz extends JFrame {
     private void blackground(){
         JLabel blackground=new JLabel();
         blackground.setToolTipText("这是背景图片");
-        blackground.setIcon(new ImageIcon("猜数字/src/image1.png"));
+        blackground.setIcon(new ImageIcon(getClass().getResource("/image1.png")));
+        blackground.setIcon(new ImageIcon("猜数字\\src\\image1.png"));
         blackground.setLocation(0,0);
         blackground.setSize(400,400);
         blackground.setCursor(new Cursor(Cursor.HAND_CURSOR));
